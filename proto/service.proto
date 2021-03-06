@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="github.com/nearbyflights/nearbyflights/proto";
+
+message Options {
+  int32 interval_in_seconds = 1;
+  double latitude = 2;
+  double longitude = 3;
+  double radius = 4;
+}
+
+message Flight {
+  double latitude = 1;
+  double longitude = 2;
+  string country = 3;
+  string callSign = 4;
+  string icao24 = 5;
+  double velocity = 6;
+}
+
+service NearbyFlights {
+  rpc Receive(stream Options) returns (stream Flight);
+}

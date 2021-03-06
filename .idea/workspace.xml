@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0fc07c5f-508a-4407-9463-9ce3bf64e026" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="D:\Go" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1ltRE8ePgfJDv0xWZHar42WSweF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\github\go-nearby-flights\proto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\github\nearby-flights\nearbyflights\proto\x509" />
+      <recent name="C:\github\nearby-flights\nearby-flights\authentication" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.server_test.go (3)">
+    <configuration name="bbox_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-nearby-flights" />
+      <working_directory value="$PROJECT_DIR$/bbox" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/bbox/bbox_test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dupe_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-nearby-flights" />
+      <working_directory value="$PROJECT_DIR$/dupe" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/dupe/dupe_test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_test.go (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-nearby-flights" />
+      <working_directory value="$PROJECT_DIR$/grpc" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/grpc/server_test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_test.go (3)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-nearby-flights" />
+      <working_directory value="$PROJECT_DIR$/grpc" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <package value="github.com/nearbyflights/nearbyflights" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/grpc/server_test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-nearby-flights" />
+      <working_directory value="$PROJECT_DIR$/grpc" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/grpc/server_test.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.server_test.go (3)" />
+        <item itemvalue="Go Test.server_test.go" />
+        <item itemvalue="Go Test.dupe_test.go" />
+        <item itemvalue="Go Test.bbox_test.go" />
+        <item itemvalue="Go Test.server_test.go (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="561" y="246" key="#Go_Modules" timestamp="1608416850150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="561" y="246" key="#Go_Modules/0.0.1536.824@0.0.1536.824" timestamp="1608416850150" />
+    <state x="496" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615066371646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1615066371646" />
+    <state width="760" height="466" key="DebuggerActiveHint" timestamp="1615063922065">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="760" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1615063922065" />
+    <state width="1267" height="589" key="DebuggerActiveHint/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615008149594" />
+    <state x="636" y="218" key="FileChooserDialogImpl" timestamp="1610836510251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="636" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610836510251" />
+    <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1609866386105" />
+    <state width="1493" height="293" key="GridCell.Tab.0.bottom" timestamp="1615074130923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="293" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615074130923" />
+    <state width="2517" height="315" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="293" key="GridCell.Tab.0.center" timestamp="1615074130923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="293" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615074130923" />
+    <state width="2517" height="315" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="293" key="GridCell.Tab.0.left" timestamp="1615074130923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="293" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615074130923" />
+    <state width="2517" height="315" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="293" key="GridCell.Tab.0.right" timestamp="1615074130923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="293" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615074130923" />
+    <state width="2517" height="315" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1615066558033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="2517" height="346" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1615066558033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="2517" height="346" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1615066558033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="2517" height="346" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1615066558033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="2517" height="346" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
+    <state x="398" y="59" width="795" height="705" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610830825643">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="398" y="59" width="795" height="705" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1610830825643" />
+    <state x="320" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1615060772471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="320" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1615060772471" />
+    <state x="204" y="141" width="1066" height="510" key="dock-window-1" timestamp="1608503972159">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="204" y="141" width="1066" height="510" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1608503972159" />
+    <state x="208" y="203" width="549" height="592" key="find.popup" timestamp="1615066949726">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="208" y="203" width="549" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1615066949726" />
+    <state x="347" y="256" width="585" height="534" key="find.popup/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1608683007511" />
+    <state x="566" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1615060769266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615060769266" />
+    <state x="943" y="225" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009627213" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/db/db.go</url>
+          <line>50</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/db/db.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
