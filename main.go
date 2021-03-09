@@ -6,7 +6,6 @@ import (
 	"os"
 
 	"github.com/kelseyhightower/envconfig"
-	"github.com/nearbyflights/nearbyflights/authentication"
 	"github.com/nearbyflights/nearbyflights/db"
 	grpcService "github.com/nearbyflights/nearbyflights/grpc"
 	service "github.com/nearbyflights/nearbyflights/proto"
@@ -15,11 +14,13 @@ import (
 )
 
 type Configuration struct {
-	PostgresUrl      string `required:"true" envconfig:"POSTGRES_URL" default:"localhost:5432"`
-	User             string `required:"true" envconfig:"POSTGRES_USER" default:"admin"`
-	Password         string `required:"true" envconfig:"POSTGRES_PASSWORD" default:"secret"`
-	DatabaseName     string `required:"true" envconfig:"POSTGRES_DB" default:"flights"`
-	IntrospectionUrl string `required:"true" envconfig:"INTROSPECTION_URL" default:"http://localhost:4445/oauth2/introspect"`
+	PostgresUrl           string `required:"true" envconfig:"POSTGRES_URL" default:"localhost:5432"`
+	User                  string `required:"true" envconfig:"POSTGRES_USER" default:"admin"`
+	Password              string `required:"true" envconfig:"POSTGRES_PASSWORD" default:"secret"`
+	DatabaseName          string `required:"true" envconfig:"POSTGRES_DB" default:"flights"`
+	IntrospectionUrl      string `required:"true" envconfig:"INTROSPECTION_URL" default:"http://localhost:4445/oauth2/introspect"`
+	TlsCertificatePath    string `required:"true" envconfig:"TLS_CERTIFICATE_PATH" default:"./proto/x509/server.crt"`
+	TlsCertificateKeyPath string `required:"true" envconfig:"TLS_CERTIFICATE_KEY_PATH" default:"./proto/x509/server.key"`
 }
 
 func init() {
@@ -42,14 +43,14 @@ func main() {
 	}
 	server := &grpcService.Server{UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}, Options: database}
 
-	cert, err := credentials.NewServerTLSFromFile("./proto/x509/server.crt", "./proto/x509/server.key")
+	cert, err := credentials.NewServerTLSFromFile(c.TlsCertificatePath, c.TlsCertificateKeyPath)
 	if err != nil {
 		log.Fatalf("error loading TLS certificate %v", err)
 	}
 
 	opts := []grpc.ServerOption{
 		// Intercept request to check the token.
-		grpc.StreamInterceptor(authentication.NewAuthInterceptor(c.IntrospectionUrl)),
+		// grpc.StreamInterceptor(authentication.NewAuthInterceptor(c.IntrospectionUrl)),
 		// Enable TLS for all incoming connections.
 		grpc.Creds(cert),
 	}
