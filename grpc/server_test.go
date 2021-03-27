@@ -30,7 +30,7 @@ var client db.Client
 
 // coordinates in the middle of the Pacific Ocean to avoid bumping with a real flight from the database
 var (
-	latitude = 7.067274
+	latitude  = 7.067274
 	longitude = 220.202269
 )
 

@@ -2,6 +2,8 @@ package main
 
 import (
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 	"os"
 
@@ -41,7 +43,6 @@ func main() {
 		Password: c.Password,
 		Database: c.DatabaseName,
 	}
-	server := &grpcService.Server{UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}, Options: database}
 
 	cert, err := credentials.NewServerTLSFromFile(c.TlsCertificatePath, c.TlsCertificateKeyPath)
 	if err != nil {
@@ -61,10 +62,16 @@ func main() {
 		log.Fatalf("error creating the server %v", err)
 	}
 
+	healthServer := health.NewServer()
+	grpc_health_v1.RegisterHealthServer(grpcServer, healthServer)
+	healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_SERVING)
+
 	log.Info("starting server at port :8080")
 
+	server := &grpcService.Server{HealthServer: healthServer, Options: database, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
 	service.RegisterNearbyFlightsServer(grpcServer, server)
 	err = grpcServer.Serve(listener)
+	healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 	if err != nil {
 		log.Fatal(err)
 	}

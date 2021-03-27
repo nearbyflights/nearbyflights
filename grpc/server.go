@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"google.golang.org/grpc/health"
 	"time"
 
 	"github.com/nearbyflights/nearbyflights/db"
@@ -12,8 +13,9 @@ import (
 )
 
 type Server struct {
+	HealthServer *health.Server
+	Options      db.ClientOptions
 	service.UnimplementedNearbyFlightsServer
-	Options db.ClientOptions
 }
 
 func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
