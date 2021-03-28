@@ -78,15 +78,15 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	wg := sync.WaitGroup{}
 
-	go func() {
+	go func(server *health.Server) {
 		signal := <-signals
 		log.Printf("server closed: %v \n", signal)
 		cancel()
 		wg.Wait()
-		healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
+		server.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 		log.Println("all streams finished, shutting down")
 		log.Exit(0)
-	}()
+	}(healthServer)
 
 	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, Wg: &wg, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
 	service.RegisterNearbyFlightsServer(grpcServer, server)
