@@ -5,6 +5,7 @@ import (
 	"errors"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
+	"sync"
 	"time"
 
 	"github.com/nearbyflights/nearbyflights/db"
@@ -19,6 +20,7 @@ type Server struct {
 	HealthServer *health.Server
 	Options      db.ClientOptions
 	Context      context.Context
+	Wg			 *sync.WaitGroup
 	service.UnimplementedNearbyFlightsServer
 }
 
@@ -31,6 +33,9 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 	ctx := stream.Context()
 
 	go func() {
+		s.Wg.Add(1)
+		defer s.Wg.Done()
+
 		for {
 			options, err := stream.Recv()
 			if err != nil {
@@ -69,6 +74,9 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 	}
 
 	go func() {
+		s.Wg.Add(1)
+		defer s.Wg.Done()
+
 		for {
 			select {
 			case flights := <-flights:

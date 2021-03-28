@@ -8,6 +8,7 @@ import (
 	"net"
 	"os"
 	"os/signal"
+	"sync"
 	"syscall"
 
 	"github.com/kelseyhightower/envconfig"
@@ -75,15 +76,18 @@ func main() {
 	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 
 	ctx, cancel := context.WithCancel(context.Background())
+	wg := sync.WaitGroup{}
 
 	go func() {
 		signal := <-signals
-		log.Printf("server closed: %v", signal)
+		log.Printf("server closed: %v \n", signal)
 		cancel()
+		wg.Wait()
+		log.Println("all streams finished, shutting down")
 		log.Exit(0)
 	}()
 
-	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
+	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, Wg: &wg, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
 	service.RegisterNearbyFlightsServer(grpcServer, server)
 	err = grpcServer.Serve(listener)
 	if err != nil {
