@@ -83,6 +83,7 @@ func main() {
 		log.Printf("server closed: %v \n", signal)
 		cancel()
 		wg.Wait()
+		healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 		log.Println("all streams finished, shutting down")
 		log.Exit(0)
 	}()

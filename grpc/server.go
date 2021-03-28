@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/health/grpc_health_v1"
 	"sync"
 	"time"
 
@@ -90,7 +89,6 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 						Velocity:  f.Velocity})
 				}
 			case <-s.Context.Done():
-				s.HealthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 				errorCh <- errors.New("server stopped")
 			case <-ctx.Done():
 				log.Info("stream closed: finish send routine")
