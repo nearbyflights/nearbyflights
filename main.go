@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 	"os"
+	"os/signal"
 
 	"github.com/kelseyhightower/envconfig"
 	"github.com/nearbyflights/nearbyflights/db"
@@ -68,10 +70,21 @@ func main() {
 
 	log.Info("starting server at port :8080")
 
-	server := &grpcService.Server{HealthServer: healthServer, Options: database, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
+	signals := make(chan os.Signal, 1)
+	signal.Notify(signals, os.Interrupt)
+
+	ctx, cancel := context.WithCancel(context.Background())
+
+	go func() {
+		signal := <-signals
+		log.Printf("server closed: %v", signal)
+		cancel()
+		log.Exit(0)
+	}()
+
+	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
 	service.RegisterNearbyFlightsServer(grpcServer, server)
 	err = grpcServer.Serve(listener)
-	healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 	if err != nil {
 		log.Fatal(err)
 	}

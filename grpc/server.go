@@ -1,7 +1,10 @@
 package grpc
 
 import (
+	"context"
+	"errors"
 	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
 	"time"
 
 	"github.com/nearbyflights/nearbyflights/db"
@@ -15,6 +18,7 @@ import (
 type Server struct {
 	HealthServer *health.Server
 	Options      db.ClientOptions
+	Context      context.Context
 	service.UnimplementedNearbyFlightsServer
 }
 
@@ -77,6 +81,9 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 						Icao24:    f.Icao24,
 						Velocity:  f.Velocity})
 				}
+			case <-s.Context.Done():
+				s.HealthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
+				errorCh <- errors.New("server stopped")
 			case <-ctx.Done():
 				log.Info("stream closed: finish send routine")
 				return
