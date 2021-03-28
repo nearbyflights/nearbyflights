@@ -74,3 +74,9 @@ Move the generated files to the proto/x509 folder, and you are good to go.
 | POSTGRES_PASSWORD | PostgreSQL password                 | secret                                   |
 | POSTGRES_DB       | PostgreSQL database name            | flights                                  |
 | INTROSPECTION_URL | URL for Open ID token introspection | http://localhost:4445/oauth2/introspect  |
+
+### Run in Docker
+
+```
+docker build -t nearbyflights . && docker run --rm --detach --name nearbyflights-standalone nearbyflights
+```

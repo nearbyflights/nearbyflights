@@ -6,6 +6,6 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-CMD ["sh", "-c", "nearbyflights"]
+CMD ["nearbyflights"]
 
 EXPOSE 8080
