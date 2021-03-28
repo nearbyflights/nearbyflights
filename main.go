@@ -8,6 +8,7 @@ import (
 	"net"
 	"os"
 	"os/signal"
+	"syscall"
 
 	"github.com/kelseyhightower/envconfig"
 	"github.com/nearbyflights/nearbyflights/db"
@@ -71,7 +72,7 @@ func main() {
 	log.Info("starting server at port :8080")
 
 	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, os.Interrupt)
+	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 
 	ctx, cancel := context.WithCancel(context.Background())
 
