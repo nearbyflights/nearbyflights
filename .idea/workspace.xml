@@ -24,6 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0fc07c5f-508a-4407-9463-9ce3bf64e026" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,14 +71,14 @@
       <recent name="C:\github\nearby-flights\nearby-flights\authentication" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.server_test.go (1)">
-    <configuration name="bbox_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-nearby-flights" />
-      <working_directory value="$PROJECT_DIR$/bbox" />
-      <framework value="gotest" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/nearbyflights/nearbyflights" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/bbox/bbox_test.go" />
       <method v="2" />
     </configuration>
     <configuration name="dupe_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -119,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.server_test.go (1)" />
         <item itemvalue="Go Test.server_test.go (3)" />
         <item itemvalue="Go Test.server_test.go" />
         <item itemvalue="Go Test.dupe_test.go" />
-        <item itemvalue="Go Test.bbox_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -165,45 +167,45 @@
     </state>
     <state x="636" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610836510251" />
     <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1609866386105" />
-    <state width="2517" height="388" key="GridCell.Tab.0.bottom" timestamp="1615272237237">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="276" key="GridCell.Tab.0.bottom" timestamp="1616908668474">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615075002854" />
+    <state width="1493" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616908668474" />
     <state width="2517" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615272237237" />
-    <state width="2517" height="388" key="GridCell.Tab.0.center" timestamp="1615272237237">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="276" key="GridCell.Tab.0.center" timestamp="1616908668474">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615075002854" />
+    <state width="1493" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616908668474" />
     <state width="2517" height="388" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615272237237" />
-    <state width="2517" height="388" key="GridCell.Tab.0.left" timestamp="1615272237237">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="276" key="GridCell.Tab.0.left" timestamp="1616908668474">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615075002854" />
+    <state width="1493" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616908668474" />
     <state width="2517" height="388" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615272237237" />
-    <state width="2517" height="388" key="GridCell.Tab.0.right" timestamp="1615272237237">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="276" key="GridCell.Tab.0.right" timestamp="1616908668474">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="293" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615075002854" />
+    <state width="1493" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616908668474" />
     <state width="2517" height="388" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615272237237" />
-    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1615066558033">
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1616908668475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616908668475" />
     <state width="2517" height="346" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
-    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1615066558033">
+    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1616908668475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1616908668475" />
     <state width="2517" height="346" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
-    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1615066558033">
+    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1616908668475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1616908668475" />
     <state width="2517" height="346" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
-    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1615066558033">
+    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1616908668475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1615066558033" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1616908668475" />
     <state width="2517" height="346" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1615009652346" />
     <state x="398" y="59" width="795" height="705" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610830825643">
       <screen x="0" y="0" width="1536" height="824" />
@@ -240,6 +242,11 @@
           <url>file://$PROJECT_DIR$/db/db.go</url>
           <line>45</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/grpc/server.go</url>
+          <line>90</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

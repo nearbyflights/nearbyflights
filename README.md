@@ -78,5 +78,5 @@ Move the generated files to the proto/x509 folder, and you are good to go.
 ### Run in Docker
 
 ```
-docker build -t nearbyflights . && docker run --rm --detach --name nearbyflights-standalone nearbyflights
+docker build -t nearbyflights . && docker run --rm --detach -p 8080:8080 --name nearbyflights-standalone nearbyflights
 ```

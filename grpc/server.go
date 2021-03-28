@@ -31,8 +31,8 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 
 	ctx := stream.Context()
 
+	s.Wg.Add(1)
 	go func() {
-		s.Wg.Add(1)
 		defer s.Wg.Done()
 
 		for {
@@ -47,7 +47,6 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 
 				if st.Code() == codes.Canceled {
 					log.Info("stream closed: finish receive routine")
-					errorCh <- err
 					return
 				}
 			}
@@ -72,8 +71,8 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 		return err
 	}
 
+	s.Wg.Add(1)
 	go func() {
-		s.Wg.Add(1)
 		defer s.Wg.Done()
 
 		for {
@@ -90,6 +89,7 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 				}
 			case <-s.Context.Done():
 				errorCh <- errors.New("server stopped")
+				return
 			case <-ctx.Done():
 				log.Info("stream closed: finish send routine")
 				return

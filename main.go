@@ -76,20 +76,21 @@ func main() {
 	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 
 	ctx, cancel := context.WithCancel(context.Background())
-	wg := sync.WaitGroup{}
+	wg := &sync.WaitGroup{}
 
-	go func(server *health.Server) {
+	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, Wg: wg, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
+	service.RegisterNearbyFlightsServer(grpcServer, server)
+
+	go func() {
 		signal := <-signals
 		log.Printf("server closed: %v \n", signal)
 		cancel()
+		healthServer.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 		wg.Wait()
-		server.SetServingStatus("nearbyflights", grpc_health_v1.HealthCheckResponse_NOT_SERVING)
 		log.Println("all streams finished, shutting down")
 		log.Exit(0)
-	}(healthServer)
+	}()
 
-	server := &grpcService.Server{HealthServer: healthServer, Options: database, Context: ctx, Wg: &wg, UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}}
-	service.RegisterNearbyFlightsServer(grpcServer, server)
 	err = grpcServer.Serve(listener)
 	if err != nil {
 		log.Fatal(err)
