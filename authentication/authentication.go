@@ -98,6 +98,7 @@ func valid(authorization []string) (bool, string) {
 		return false, ""
 	}
 
+	fmt.Println(introspection)
 	fmt.Printf("user %v authorized\n", introspection.Sub)
 
 	return introspection.Active, introspection.ClientId

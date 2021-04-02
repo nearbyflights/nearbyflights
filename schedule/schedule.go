@@ -2,6 +2,7 @@ package schedule
 
 import (
 	"context"
+	"github.com/nearbyflights/nearbyflights/authentication"
 	"time"
 
 	"github.com/nearbyflights/nearbyflights/bbox"
@@ -63,13 +64,13 @@ func (s *Scheduler) getFlights(ctx context.Context, options Options) ([]db.Fligh
 	log.Infof("returned flights before dupe check: %v", flights)
 
 	newFlights := flights[:0]
-	/*clientId, err := authentication.GetClientId(ctx)
+	clientId, err := authentication.GetClientId(ctx)
 	if err != nil {
 		log.Errorf("error while parsing client ID: %v", err)
-	}*/
+	}
 
 	for _, f := range flights {
-		if !dupe.Exists("test", f.Icao24, time.Hour) {
+		if !dupe.Exists(clientId, f.Icao24, time.Hour) {
 			newFlights = append(newFlights, f)
 		}
 	}
