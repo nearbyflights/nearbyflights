@@ -25,7 +25,6 @@
     <list default="true" id="0fc07c5f-508a-4407-9463-9ce3bf64e026" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/authentication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/schedule.go" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/schedule.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,10 +147,6 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="561" y="246" key="#Go_Modules" timestamp="1608416850150">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="561" y="246" key="#Go_Modules/0.0.1536.824@0.0.1536.824" timestamp="1608416850150" />
     <state x="496" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615066371646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -214,15 +209,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="320" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1615060772471" />
-    <state x="204" y="141" width="1066" height="510" key="dock-window-1" timestamp="1608503972159">
+    <state x="208" y="203" width="549" height="592" key="find.popup" timestamp="1617400610319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="204" y="141" width="1066" height="510" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1608503972159" />
-    <state x="208" y="203" width="549" height="592" key="find.popup" timestamp="1616902695939">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="208" y="203" width="549" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616902695939" />
-    <state x="347" y="256" width="585" height="534" key="find.popup/0.0.2560.1040/2560.0.1536.824@0.0.2560.1040" timestamp="1608683007511" />
+    <state x="208" y="203" width="549" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1617400610319" />
     <state x="566" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1615060769266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
