@@ -85,16 +85,23 @@ func valid(authorization []string) (bool, string) {
 	token := strings.TrimPrefix(authorization[0], "Bearer ")
 
 	resp, err := http.PostForm(introspection, url.Values{"token": {token}})
+	if err != nil {
+		log.Errorf("error when getting introspection response: %v", err)
+		return false, ""
+	}
 
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Errorf("error when reading introspection response: %v", err)
+		return false, ""
+	}
 
 	var introspection Introspection
 	err = json.Unmarshal(body, &introspection)
 	if err != nil {
-		log.Fatalf("error when doing introspection %v", err)
-
+		log.Errorf("error when unmarshalling introspection response %v", err)
 		return false, ""
 	}
 
