@@ -11,6 +11,7 @@ import (
 	"net"
 	"net/http"
 	"net/http/httptest"
+	"sync"
 	"testing"
 	"time"
 
@@ -62,12 +63,14 @@ func init() {
 	}
 	client = db.NewClient(database)
 
+	wg := &sync.WaitGroup{}
+
 	// we add a test flight that will be returned in the stream
 	// we can't have the cron service running during this test because this could delete the test flight
 	client.AddTestFlight(db.Flight{Geometry: types.Q(fmt.Sprintf("ST_SetSRID(ST_MakePoint(%v, %v),4326)", longitude, latitude)), Latitude: latitude, Longitude: longitude, Country: "BR", Icao24: "123456", Velocity: 10})
 
 	// following logic will instantiate and serve the gRPC server
-	server := &Server{UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}, Options: database}
+	server := &Server{UnimplementedNearbyFlightsServer: service.UnimplementedNearbyFlightsServer{}, Options: database, Context: context.Background(), Wg: wg}
 
 	cert, err := credentials.NewServerTLSFromFile("../proto/x509/server.crt", "../proto/x509/server.key")
 	if err != nil {

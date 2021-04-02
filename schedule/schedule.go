@@ -2,6 +2,7 @@ package schedule
 
 import (
 	"context"
+	"fmt"
 	"github.com/nearbyflights/nearbyflights/authentication"
 	"time"
 
@@ -52,6 +53,13 @@ func (s *Scheduler) GetFlights(ctx context.Context, newOptions chan Options) (<-
 }
 
 func (s *Scheduler) getFlights(ctx context.Context, options Options) ([]db.Flight, error) {
+	clientId, err := authentication.GetClientId(ctx)
+	if err != nil {
+		log.Errorf("error while parsing client ID: %v", err)
+	}
+
+	fmt.Printf("client ID: %s \n", clientId)
+
 	boundingBox := bbox.NewBoundingBox(options.Latitude, options.Longitude, options.Radius)
 
 	log.Infof("search bounds: http://bboxfinder.com/#%v \n", boundingBox)
@@ -64,10 +72,6 @@ func (s *Scheduler) getFlights(ctx context.Context, options Options) ([]db.Fligh
 	log.Infof("returned flights before dupe check: %v", flights)
 
 	newFlights := flights[:0]
-	clientId, err := authentication.GetClientId(ctx)
-	if err != nil {
-		log.Errorf("error while parsing client ID: %v", err)
-	}
 
 	for _, f := range flights {
 		if !dupe.Exists(clientId, f.Icao24, time.Hour) {

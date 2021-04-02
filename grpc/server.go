@@ -51,11 +51,11 @@ func (s *Server) Receive(stream service.NearbyFlights_ReceiveServer) error {
 				}
 			}
 
-			log.Info("received new options from client")
-
 			if options == nil {
 				continue
 			}
+
+			log.Info("received new options from client")
 
 			newOptions <- schedule.Options{
 				Latitude:  options.Latitude,

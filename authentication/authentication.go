@@ -57,7 +57,7 @@ func validateToken(srv interface{}, stream grpc.ServerStream, _ *grpc.StreamServ
 		return status.Errorf(codes.InvalidArgument, "missing metadata")
 	}
 
-	ok, id := valid(md["Authorization"])
+	ok, id := valid(md["authorization"])
 	if !ok {
 		return status.Errorf(codes.Unauthenticated, "invalid token")
 	}

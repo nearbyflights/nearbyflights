@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"github.com/nearbyflights/nearbyflights/authentication"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
@@ -55,7 +56,7 @@ func main() {
 
 	opts := []grpc.ServerOption{
 		// Intercept request to check the token.
-		// grpc.StreamInterceptor(authentication.NewAuthInterceptor(c.IntrospectionUrl)),
+		grpc.StreamInterceptor(authentication.NewAuthInterceptor(c.IntrospectionUrl)),
 		// Enable TLS for all incoming connections.
 		grpc.Creds(cert),
 	}
