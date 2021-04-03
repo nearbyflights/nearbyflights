@@ -64,7 +64,7 @@ func validateToken(srv interface{}, stream grpc.ServerStream, _ *grpc.StreamServ
 
 	md.Set(clientId.String(), id)
 
-	err = stream.SendHeader(md)
+	err := stream.SendHeader(md)
 	if err != nil {
 		return status.Errorf(codes.Internal, "error sending client ID")
 	}
