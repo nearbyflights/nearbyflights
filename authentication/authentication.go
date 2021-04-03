@@ -105,6 +105,11 @@ func valid(authorization []string) (bool, string) {
 		return false, ""
 	}
 
+	if !introspection.Active {
+		log.Errorf("token is not active (expired or revoked)")
+		return false, ""
+	}
+
 	fmt.Println(introspection)
 	fmt.Printf("user %v authorized\n", introspection.Sub)
 
