@@ -55,21 +55,19 @@ func (s *Scheduler) GetFlights(ctx context.Context, newOptions chan Options) (<-
 func (s *Scheduler) getFlights(ctx context.Context, options Options) ([]db.Flight, error) {
 	clientId, err := authentication.GetClientId(ctx)
 	if err != nil {
-		log.Errorf("error while parsing client ID: %v", err)
+		return nil, fmt.Errorf("error while parsing client ID: %v", err)
 	}
-
-	fmt.Printf("client ID: %s \n", clientId)
 
 	boundingBox := bbox.NewBoundingBox(options.Latitude, options.Longitude, options.Radius)
 
-	log.Infof("search bounds: http://bboxfinder.com/#%v \n", boundingBox)
+	log.Infof("[%s] search bounds: http://bboxfinder.com/#%v \n", clientId, boundingBox)
 
 	flights, err := s.Client.GetFlights(boundingBox)
 	if err != nil {
 		return nil, err
 	}
 
-	log.Infof("returned flights before dupe check: %v", flights)
+	log.Infof("[%s] returned flights before dupe check: %v", clientId, flights)
 
 	newFlights := flights[:0]
 
@@ -79,7 +77,7 @@ func (s *Scheduler) getFlights(ctx context.Context, options Options) ([]db.Fligh
 		}
 	}
 
-	log.Infof("returned flights after dupe check: %v", newFlights)
+	log.Infof("[%s] returned flights after dupe check: %v", clientId, newFlights)
 
 	return newFlights, nil
 }

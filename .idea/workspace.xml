@@ -25,6 +25,7 @@
     <list default="true" id="0fc07c5f-508a-4407-9463-9ce3bf64e026" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/authentication.go" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/authentication.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/schedule.go" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/schedule.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
