@@ -64,6 +64,8 @@ func validateToken(srv interface{}, stream grpc.ServerStream, _ *grpc.StreamServ
 
 	md.Set(clientId.String(), id)
 
+	fmt.Printf("set client ID to %v", id)
+
 	err := stream.SendHeader(md)
 	if err != nil {
 		return status.Errorf(codes.Internal, "error sending client ID")
@@ -108,5 +110,5 @@ func valid(authorization []string) (bool, string) {
 	fmt.Println(introspection)
 	fmt.Printf("user %v authorized\n", introspection.Sub)
 
-	return introspection.Active, introspection.ClientId
+	return introspection.Active, introspection.Sub
 }
